@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="hospital_sequence" model="ir.sequence">
+            <field name="name">hospital Seq</field>
+            <field name="code">hospital_seq</field>
+            <field name="prefix">MED</field>
+            <field name="padding">6</field>
+        </record>
+    </data>
+</odoo>

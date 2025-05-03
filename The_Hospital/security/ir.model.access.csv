@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital,access_hospital,model_hospital,,1,1,1,1
+access_disease,access_disease,model_disease,,1,1,1,1
+access_cure,access_cure,model_cure,,1,1,1,1

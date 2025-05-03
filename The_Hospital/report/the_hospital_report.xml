@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="the_hospital_report" model="ir.actions.report">
+        <field name="name">the_hospital Report</field>
+        <field name="model">hospital</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="model_hospital"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">The_Hospital.the_hospital_report_template</field>
+    </record>
+
+
+    <template id="the_hospital_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="rec">
+                    <style>
+                        @page {
+                          margin-top: 0mm;
+                        }
+                        body {
+                          margin-top: 0px !important;
+                          padding-top: 0px !important;
+                        }
+                    </style>
+                    <div>
+                        <h4>
+                            <t t-esc="'-' * 200"/>
+                        </h4>
+                        <h4>| The Hospital Logo</h4>
+                        <br/>
+                        <h4> Medical Report |</h4>
+                        <h4>
+                            <t t-esc="'-' * 200"/>
+                        </h4>
+                    </div>
+                    <br/>
+                    <h3>
+                        <p>
+                         <h5 style="color: #ff3333;"><t t-esc="rec.patient_name"/></h5>
+                        |<h5 style="color: #ff3333;"><t t-esc="rec.age"/></h5>
+                        |<h5 style="color: #ff3333;"><t t-esc="rec.ref"/></h5>
+                        </p>
+                    </h3>
+                    
+                    <br/>
+                    <!-- <t t-foreach="rec.disease_ids" t-as="disease">
+                        <p><h4><t t-esc="disease.disease_ids"/></h4></p>
+                    </t> -->
+                    <br/>
+                     <style>
+                        table {
+                        width: 100%;
+                        border: 1px solid #b3add;
+                        border-collapse: collapse;
+                        padding: 5px;
+                        }
+                        table th {
+                        border: 1px solid #b3add;
+                        padding: 5px;
+                        background: #f0f0f0;
+                        color: #313030;
+                        }
+                        table td {
+                        border: 1px solid #b3add;
+                        text-align: center;
+                        padding: 5px;
+                        background: #ffffff;
+                        color: #313030;
+                        }
+                    </style> 
+                    <table>
+                        <thead>
+                            <th>The Cure</th>
+                            <th>Company Name</th>
+                            <th>Medication Time</th>
+                        </thead>
+                        <tbode>
+                            <t t-foreach="rec.cure_ids" t-as="cure">
+                                <tr>
+                                    <td><t t-esc="cure.name_cure"/></td> 
+                                    <td><t t-esc="cure.company_name"/></td> 
+                                    <td><t t-esc="cure.medication_time"/></td>
+                                </tr>
+                            </t>
+                        </tbode>
+                    </table>
+                    <br />
+                    <h3><span style="color: #ff3333;">Doctors Note: </span><t t-esc="rec.doctors_note"/></h3>
+                    <br />
+                    <h3><span style="color: #ff3333;">Signature:</span><t t-esc="rec.signature"/></h3>
+                    <t t-esc="'-' * 200"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+<!-- <style="max-height:180px;"></style> -->

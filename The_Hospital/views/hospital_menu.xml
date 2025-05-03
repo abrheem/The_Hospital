@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="hospital_root_menu"
+        name="The Hospital"
+        />
+
+    <menuitem
+        id="hospital_menu"
+        name="The Hospital"
+        parent="hospital_root_menu"/> 
+    
+    <menuitem
+        id="disease_menu"
+        name="The Disease"
+        parent="hospital_root_menu"/>  
+
+    <!-- <menuitem
+        id="cure_menu"
+        name="The Cure"
+        parent="hospital_root_menu"/>           -->
+
+</odoo>
+
+
+
+
+<!-- web_icon="Factory_Production,/static/description/icon.png" -->

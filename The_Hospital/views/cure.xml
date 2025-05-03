@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="cure_view_tree" model="ir.ui.view">
+        <field name="name">cure tree</field>
+        <field name="model">cure</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name_cure"/>   
+                <field name="company_name"/>   
+                <field name="medication_time"/>   
+            </list>
+        </field>
+    </record>
+
+    <record id="cure_view_form" model="ir.ui.view">
+        <field name="name">cure form</field>
+        <field name="model">cure</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name_cure"/>
+                            <h1>
+                                <field name="name_cure"/>
+                            </h1>
+                    </div>
+                    <group>
+                        <field name="company_name" />
+                        <field name="medication_time" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="cure_action" model="ir.actions.act_window">
+        <field name="name">The Cure</field>
+        <field name="res_model">cure</field>
+
+    </record>
+    <!-- <menuitem
+        id="cure_ment_item"
+        name="The Cure"
+        action="cure_action"
+        parent="cure_menu"
+        /> -->
+
+
+</odoo>
